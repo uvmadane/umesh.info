@@ -464,8 +464,10 @@ section {
     white-space: nowrap;
 }
 .number-heading::before {
-    content: "0" counter(section) ".";
-    counter-increment: section 1;
+    content: ""  "▹";
+    /* content: "0" counter(section) "."; */
+    counter-increment: section;
+    
     color: var(--main-color);
     margin-right: 10px;
     font-family: var(--font-mono);
@@ -520,6 +522,13 @@ section {
     gap: 50px;
     align-items: center;
 }
+.check-me-inner {
+    /* display: grid; */
+    
+    grid-template-columns: 3fr 2fr;
+    gap: 50px;
+    align-items: center;
+}
 
 .about-me-para {
     margin-block: 20px;
@@ -544,6 +553,34 @@ section {
 }
 
 .tech-know li::before{
+    content: "▹";
+    position: absolute;
+    left: 0px;
+    color: var(--green);
+    font-size: var(--fz-sm);
+    line-height: 12px;
+}
+
+.tech-know1{
+    /* display: grid; */
+    grid-template-columns: repeat(2, minmax(140px, 200px));
+    gap: 0 10px;
+    padding: 0;
+    margin: 20px 0 0;
+    overflow: hidden;
+    list-style: none;
+}
+
+.tech-know1 li{
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    width: 90%;
+}
+
+.tech-know1 li::before{
     content: "▹";
     position: absolute;
     left: 0px;
@@ -604,6 +641,9 @@ section {
     .about-me-intro {
         width: fit-content;
         line-height: normal;
+    }
+    .contact{
+        margin-bottom: 150px;
     }
 
     .main-container {
